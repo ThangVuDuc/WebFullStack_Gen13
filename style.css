@@ -1,0 +1,57 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+.menu {
+    background-color: #d5b0ac;
+    color: #402e2a;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+}
+
+.menu span {
+    width: 100px;
+    height: 30px;
+    display: inline-block;
+    line-height: 30px;
+    text-align: center;
+    position: relative;
+    margin: 1px 1px;
+}
+
+.menu span:hover {
+    background-color: #9cd08f;
+    color: #ffffff;
+}
+
+.menu > span:hover > .menu.sub-menu {
+    position: absolute;
+    top: 100%;
+    opacity: 1;
+    visibility: visible;
+}
+
+.menu.sub-menu > span:hover > .menu.sub-menu {
+    position: absolute;
+    left: 100%;
+    top: 0;
+    transform: none;
+    opacity: 1;
+    visibility: visible;
+}
+
+.menu.sub-menu {
+    display: block;
+    width: 100px;
+    visibility: hidden;
+    background: transparent;
+}
+
+.menu.sub-menu span {
+    display: block;
+    margin: 0px 0 0 1px;
+    position: relative;
+    background-color: #d5b0ac;
+}
