@@ -1,0 +1,71 @@
+body{
+    background: #bebebe!important;
+}
+.qs{
+
+    position:  relative;
+    
+    height: 330px;
+    }
+    .qs h2{
+        width:  80%;
+        text-align:  center;
+        position: absolute;
+        left:  50%;
+        transform: translateX(-50%);
+        top: 0;
+    }
+    .qs textarea{
+        width: 80%;
+        height: 200px;
+        position:  absolute;
+        left:  50%;
+        transform: translateX(-50%);
+        bottom: 11%;
+    }
+
+    .total_count {
+    float: left;
+    }
+
+    .ans{
+    width: 80%;
+    margin: auto;
+    overflow:  hidden;
+}
+
+.ans h2 {
+    text-align:  center;
+}
+
+.ans .btn.btn-danger {
+    float:  left;
+    margin-left: 15%;
+}
+
+.ans .btn.btn-success {
+    float:  right;
+    margin-right: 15%;
+}
+.otherButton{
+    width: 20%;
+    display: flex;
+    justify-content: space-around;
+    margin:  auto;
+}
+.vote{
+    width: 80%;
+    margin: auto;
+    overflow:  hidden;
+    position:  relative;
+    height: 200px;
+}
+.vote h2{
+    text-align:center
+}
+.vote .btn.btn-secondary {
+    position: absolute;
+    left:  50%;
+    transform: translateX(-50%);
+    bottom: 0;
+}
