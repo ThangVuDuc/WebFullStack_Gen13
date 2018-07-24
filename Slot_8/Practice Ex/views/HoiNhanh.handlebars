@@ -1,0 +1,35 @@
+<form id="questionForm" class="HoiNhanh">
+    <h1>Hãy hỏi cộng đồng một câu hỏi đúng/sai hoặc có/không</h1>
+    <textarea maxlength="200" rows="6" id="question" name="questionContent"></textarea>
+    <p>Còn
+        <span id="remain">200</span>/200 ký tự</p>
+    <button type="submit" value="Gui">Gửi</button>
+</form>
+
+<script>
+    let char = 200;
+    $("#question").on("input", function () {
+        $("#remain").text(char - $("#question").val().length);
+    });
+    $("#questionForm").on("submit", function (event) {
+        event.preventDefault();
+        $.ajax({
+            url: '/api/addquestion',
+            type: 'POST',
+            data: {
+                questionContent: $("#question").val()
+            },
+            success: function (body) {
+                if (body.success) {
+                    window.location.href = "/question/" + body.questionID;
+                } else {
+                    alert("BUG!");
+                }
+            },
+            error: function (body) {
+                console.log(body);
+                alert("BUG!");
+            }
+        });
+    })
+</script>

@@ -1,0 +1,49 @@
+<form class="DapGon">
+    <h1 class="text-question">{{ques.content}}</h1>
+    <div id="choice">
+        <div>
+            <a href="/answer/{{ques.id}}/no" id="noAnswer">
+                <button type="button" class="no" value="no">Sai / Không / Trái</button>
+        </div>
+        </a>
+
+        <div>
+            <a href="/answer/{{ques.id}}/yes" id="yesAnswer">
+                <button type="button" class="yes" value="yes">Đúng / Có / Phải</button>
+            </a>
+        </div>
+    </div>
+
+    <div id="optional">
+        <a href="/question/{{ques.id}}" id="result">
+            <button type="button">Kết quả vote</button>
+        </a>
+        <a href="/" id="refresh">
+            <button>Câu hỏi khác</button>
+        </a>
+    </div>
+</form>
+
+<script>
+    $("#refresh").on("click", function (event) {
+        event.preventDefault();
+        $.ajax({
+            url: '/api/refresh',
+            type: 'GET',
+            success: function (body) {
+                if (body.success) {
+                    $(".text-question").text(body.ques.content);
+                    $("#noAnswer").attr("href", "/answer/" + body.ques._id +"/no");     
+                    $("#yesAnswer").attr("href", "/answer/" + body.ques._id + "/yes");
+                    $("#result").attr("href","/question/" + body.ques._id);
+                } else {
+                    alert("BUG!");
+                }
+            },
+            error: function (body) {
+                console.log(body);
+                alert("BUG!");
+            }
+        });
+    })
+</script>
