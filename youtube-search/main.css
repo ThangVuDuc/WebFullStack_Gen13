@@ -1,0 +1,41 @@
+#logo {
+	height: 100px;
+}
+
+
+a:hover {
+	color: var(--yt-primary-text-color);
+	text-decoration: none;
+}
+
+.text-center h1{
+    font-size: 30px;
+}
+
+#submit{
+    width: 40%;
+}
+
+
+.result{
+    display: inline-block;
+}
+
+.result{
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.result img{
+    float: left;
+    height: 280px;
+    width: 400px;
+}
+
+
+a{
+	font-weight: 400;
+	font-size: 1.6rem;
+	line-height: 2.2rem;
+    color: var(--yt-primary-text-color);
+}
